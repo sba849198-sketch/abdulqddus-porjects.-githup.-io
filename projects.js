@@ -30,7 +30,7 @@ const PROJECTS = [
     accentColor: "#FFB300",
     icon: "🛒",
     screenshots: [],
-    downloadUrl: "https://github.com/YOUR_USERNAME/souga/releases/download/v1.0.0/souga-v1.0.0.apk",
+    downloadUrl: "https://github.com/sba849198-sketch/sba849198-sketch.github.io/releases/download/v1.0.0/app-release.apk",
     sourceUrl: "",
     demoUrl: "",
     featured: true,

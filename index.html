@@ -1,713 +1,326 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عبدالقدوس — مطور تطبيقات | AQ Dev</title>
+<meta name="description" content="مطور تطبيقات محترف متخصص في Flutter وFirebase وAndroid. تصفح مشاريعي وتطبيقاتي.">
+<meta name="keywords" content="مطور تطبيقات، Flutter، Firebase، Android، سوقة، AQ Dev">
+<meta name="author" content="عبدالقدوس">
+<link rel="canonical" href="https://YOUR_USERNAME.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://YOUR_USERNAME.github.io/">
+<meta property="og:title" content="عبدالقدوس — مطور تطبيقات احترافي">
+<meta property="og:description" content="تصفح مشاريعي: Android، ويب، سطح المكتب">
+<meta property="og:image" content="https://YOUR_USERNAME.github.io/images/og.png">
+<meta property="og:locale" content="ar_SA">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0A0E1A">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"عبدالقدوس","url":"https://YOUR_USERNAME.github.io","jobTitle":"مطور تطبيقات","knowsAbout":["Flutter","Firebase","Android","C#"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0E1A;--bg2:#0F1525;--bg3:#151C32;--card:#111827;
+  --border:rgba(255,255,255,0.07);--gold:#FFB300;--gold2:#FFC933;
+  --crimson:#DC143C;--text:#F0F4FF;--text2:#8A95B0;--text3:#4A5568;
+  --green:#3DDC84;--radius:16px;--radius-sm:10px;
+  --shadow:0 8px 32px rgba(0,0,0,0.4);
+  --font-ar:'Tajawal',sans-serif;--font-en:'Syne',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-ar);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(220,20,60,0.08),transparent 60%),radial-gradient(ellipse 60% 40% at 80% 110%,rgba(255,179,0,0.06),transparent 60%);pointer-events:none;z-index:0}
 
-  <!-- ─── SEO الأساسي ─────────────────────────────────────────── -->
-  <title>عبدالقدوس — مطور تطبيقات محترف | AQ Dev</title>
-  <meta name="description" content="مطور تطبيقات محترف متخصص في Flutter وFirebase وتطبيقات الأندرويد وسطح المكتب. تصفح مشاريعي وتطبيقاتي.">
-  <meta name="keywords" content="مطور تطبيقات، Flutter، Firebase، Android، سوقة، تطبيقات عربية، AQ Dev">
-  <meta name="author" content="عبدالقدوس">
-  <link rel="canonical" href="https://aqdev.github.io/">
+/* NAV */
+nav{position:fixed;top:0;right:0;left:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(10,14,26,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:.3s}
+.nav-logo{display:flex;align-items:center;gap:8px;font-family:var(--font-en);font-size:1.25rem;font-weight:800}
+.nav-logo em{font-style:normal;color:var(--gold)}
+.dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.9rem;color:var(--text2);transition:.2s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;right:0;left:0;height:2px;background:var(--gold);border-radius:2px;transform:scaleX(0);transition:.25s}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{padding:8px 20px;border-radius:8px;background:var(--gold);color:#0A0E1A;font-family:var(--font-ar);font-weight:700;font-size:.85rem;border:none;cursor:pointer;transition:.2s}
+.nav-cta:hover{background:var(--gold2);transform:translateY(-1px)}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-ham span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
 
-  <!-- ─── Open Graph (مشاركة على السوشيال) ─────────────────────── -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aqdev.github.io/">
-  <meta property="og:title" content="عبدالقدوس — مطور تطبيقات محترف">
-  <meta property="og:description" content="تصفح مشاريعي وتطبيقاتي: Android، سطح المكتب، ويب">
-  <meta property="og:image" content="https://aqdev.github.io/images/og-cover.png">
-  <meta property="og:locale" content="ar_SA">
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:100px 5% 60px;position:relative;z-index:1}
+.hero-inner{max-width:760px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:20px;background:rgba(255,179,0,0.1);border:1px solid rgba(255,179,0,0.25);font-size:.8rem;color:var(--gold);margin-bottom:24px;animation:fadeDown .6s ease both}
+.live{width:7px;height:7px;background:#3DDC84;border-radius:50%;animation:pulse 1.5s infinite}
+.hero-title{font-size:clamp(2.4rem,6vw,4rem);font-weight:900;line-height:1.15;margin-bottom:20px;animation:fadeDown .7s .1s ease both}
+.hero-title em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.2rem);color:var(--text2);max-width:560px;margin-bottom:40px;font-weight:300;animation:fadeDown .7s .2s ease both}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;animation:fadeDown .7s .3s ease both}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:var(--radius-sm);background:var(--gold);color:#0A0E1A;font-family:var(--font-ar);font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:.25s}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,179,0,0.3)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius-sm);background:transparent;color:var(--text);font-family:var(--font-ar);font-weight:600;font-size:.95rem;border:1px solid var(--border);cursor:pointer;transition:.25s}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.25);background:rgba(255,255,255,0.04)}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid var(--border);animation:fadeDown .7s .4s ease both;flex-wrap:wrap}
+.stat-n{font-size:1.8rem;font-weight:900;color:var(--gold)}
+.stat-l{font-size:.8rem;color:var(--text3);margin-top:2px}
 
-  <!-- ─── Twitter Card ──────────────────────────────────────────── -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="عبدالقدوس — مطور تطبيقات">
-  <meta name="twitter:description" content="تصفح مشاريعي وتطبيقاتي">
-  <meta name="twitter:image" content="https://aqdev.github.io/images/og-cover.png">
+/* SECTIONS */
+.section{padding:80px 5%;position:relative;z-index:1}
+.sec-tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.sec-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;line-height:1.2}
+.sec-head{margin-bottom:48px}
 
-  <!-- ─── PWA Manifest ─────────────────────────────────────────── -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#0A0E1A">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-  <link rel="apple-touch-icon" href="/images/icon-192.png">
+/* FILTER */
+.filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.fbtn{padding:8px 18px;border-radius:20px;background:var(--bg3);color:var(--text2);border:1px solid var(--border);font-family:var(--font-ar);font-size:.85rem;cursor:pointer;transition:.2s}
+.fbtn:hover{border-color:rgba(255,255,255,0.2);color:var(--text)}
+.fbtn.active{background:var(--gold);color:#0A0E1A;border-color:transparent;font-weight:700}
 
-  <!-- ─── JSON-LD Structured Data ──────────────────────────────── -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "عبدالقدوس",
-    "url": "https://aqdev.github.io",
-    "jobTitle": "مطور تطبيقات",
-    "knowsAbout": ["Flutter", "Firebase", "Android", "C#", ".NET"],
-    "description": "مطور تطبيقات متخصص في Flutter وFirebase"
-  }
-  </script>
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
 
-  <!-- ─── Fonts ─────────────────────────────────────────────────── -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s;animation:fadeUp .5s ease both}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,0.15);box-shadow:var(--shadow)}
+.card.big{grid-column:span 2}
+.card-img{height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.card-img .icon{position:relative;z-index:1;font-size:4rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.4))}
+.card-img .pat{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.02) 20px,rgba(255,255,255,0.02) 40px);background-size:40px 40px}
 
-  <style>
-    /* ═══════════════════════════════════════════════════════════
-       CSS VARIABLES — Design System
-    ═══════════════════════════════════════════════════════════ */
-    :root {
-      --bg:        #0A0E1A;
-      --bg2:       #0F1525;
-      --bg3:       #151C32;
-      --card:      #111827;
-      --border:    rgba(255,255,255,0.07);
-      --gold:      #FFB300;
-      --gold2:     #FFC933;
-      --crimson:   #DC143C;
-      --text:      #F0F4FF;
-      --text2:     #8A95B0;
-      --text3:     #4A5568;
-      --green:     #3DDC84;
-      --blue:      #4285F4;
-      --purple:    #9C27B0;
-      --orange:    #FF6D00;
-      --font-ar:   'Tajawal', sans-serif;
-      --font-en:   'Syne', sans-serif;
-      --radius:    16px;
-      --radius-sm: 10px;
-      --shadow:    0 8px 32px rgba(0,0,0,0.4);
-      --shadow-gold: 0 0 40px rgba(255,179,0,0.15);
-    }
+/* Screenshot strip on card */
+.card-screenshots{display:flex;gap:4px;padding:0 16px 12px}
+.card-ss{width:52px;height:92px;border-radius:6px;object-fit:cover;border:1px solid rgba(255,255,255,0.1);flex-shrink:0}
+.card-ss-more{width:52px;height:92px;border-radius:6px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--text3);flex-shrink:0}
 
-    /* ═══════════════════════════════════════════════════════════
-       RESET & BASE
-    ═══════════════════════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-ar);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+.card-body{padding:16px 20px 20px}
+.card-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.badge{padding:3px 10px;border-radius:12px;font-size:.7rem;font-weight:700}
+.badge-ok{padding:3px 10px;border-radius:12px;font-size:.7rem;font-weight:600;background:rgba(61,220,132,0.15);color:#3DDC84}
+.card-title{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.card-sub{font-size:.85rem;color:var(--text2);margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.tag{padding:3px 9px;border-radius:6px;background:rgba(255,255,255,0.05);color:var(--text2);font-size:.72rem}
+.card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border)}
+.card-stats{display:flex;gap:14px}
+.cstat{font-size:.78rem;color:var(--text3)}
+.cstat span{color:var(--text2);font-weight:600}
+.card-btn{padding:8px 16px;border-radius:8px;font-family:var(--font-ar);font-size:.82rem;font-weight:700;cursor:pointer;border:none;transition:.2s;color:#fff}
 
-    /* خلفية نقاط متحركة */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background:
-        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(220,20,60,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(255,179,0,0.06) 0%, transparent 60%);
-      pointer-events: none; z-index: 0;
-    }
+/* MODAL */
+.overlay{position:fixed;inset:0;z-index:200;background:rgba(5,8,16,0.96);backdrop-filter:blur(12px);display:flex;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--bg2);border:1px solid rgba(255,255,255,0.1);border-radius:24px;width:100%;max-width:800px;transform:translateY(30px);transition:transform .35s cubic-bezier(.22,.9,.36,1);overflow:hidden;position:relative;margin:auto}
+.overlay.open .modal{transform:translateY(0)}
+.m-hero{height:220px;display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;overflow:hidden}
+.m-pat{position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(255,255,255,0.025) 20px,rgba(255,255,255,0.025) 40px)}
+.m-icon{position:relative;z-index:1;filter:drop-shadow(0 6px 24px rgba(0,0,0,0.5))}
+.m-close{position:absolute;top:16px;left:16px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.5);border:1px solid var(--border);cursor:pointer;color:var(--text2);font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:10}
+.m-close:hover{color:var(--text);background:rgba(255,255,255,0.1)}
+.m-body{padding:28px 32px 36px}
 
-    /* ═══════════════════════════════════════════════════════════
-       NAVBAR
-    ═══════════════════════════════════════════════════════════ */
-    nav {
-      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5%;
-      height: 64px;
-      background: rgba(10,14,26,0.85);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      transition: all .3s;
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      font-family: var(--font-en); font-size: 1.25rem; font-weight: 800;
-      color: var(--text);
-    }
-    .nav-logo span { color: var(--gold); }
-    .nav-logo .dot { width:8px; height:8px; background:var(--gold); border-radius:50%; animation: pulse 2s infinite; }
-    .nav-links { display:flex; gap:32px; align-items:center; }
-    .nav-links a {
-      font-size: .9rem; color: var(--text2); transition: color .2s;
-      position: relative;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
-    .nav-links a::after {
-      content:''; position:absolute; bottom:-4px; right:0; left:0;
-      height:2px; background:var(--gold); border-radius:2px;
-      transform:scaleX(0); transition:transform .25s;
-    }
-    .nav-links a:hover::after, .nav-links a.active::after { transform:scaleX(1); }
-    .nav-cta {
-      padding: 8px 20px; border-radius: 8px;
-      background: var(--gold); color: #0A0E1A;
-      font-weight: 700; font-size: .85rem;
-      transition: all .2s; border: none; cursor: pointer;
-    }
-    .nav-cta:hover { background: var(--gold2); transform: translateY(-1px); }
-    .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
-    .nav-hamburger span { display:block; width:24px; height:2px; background:var(--text); border-radius:2px; transition:.3s; }
+/* Screenshots gallery in modal */
+.m-screenshots{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:20px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.m-screenshots::-webkit-scrollbar{height:4px}
+.m-screenshots::-webkit-scrollbar-track{background:transparent}
+.m-screenshots::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.m-ss{height:180px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,0.1);flex-shrink:0;cursor:pointer;transition:transform .2s}
+.m-ss:hover{transform:scale(1.02)}
 
-    /* ═══════════════════════════════════════════════════════════
-       HERO
-    ═══════════════════════════════════════════════════════════ */
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 100px 5% 60px;
-      position: relative; z-index: 1;
-    }
-    .hero-inner {
-      max-width: 760px;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 14px; border-radius: 20px;
-      background: rgba(255,179,0,0.1);
-      border: 1px solid rgba(255,179,0,0.25);
-      font-size: .8rem; color: var(--gold); margin-bottom: 24px;
-      animation: fadeSlideDown .6s ease;
-    }
-    .hero-badge .live { width:7px; height:7px; background:#3DDC84; border-radius:50%; animation:pulse 1.5s infinite; }
-    .hero-title {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 900; line-height: 1.15;
-      margin-bottom: 20px;
-      animation: fadeSlideDown .7s .1s ease both;
-    }
-    .hero-title em { font-style: normal; color: var(--gold); }
-    .hero-subtitle {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      color: var(--text2); max-width: 560px;
-      margin-bottom: 40px; font-weight: 300;
-      animation: fadeSlideDown .7s .2s ease both;
-    }
-    .hero-actions {
-      display: flex; flex-wrap: wrap; gap: 14px;
-      animation: fadeSlideDown .7s .3s ease both;
-    }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 28px; border-radius: var(--radius-sm);
-      background: var(--gold); color: #0A0E1A;
-      font-weight: 700; font-size: .95rem;
-      transition: all .25s; border: none; cursor: pointer;
-    }
-    .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255,179,0,0.3); }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 28px; border-radius: var(--radius-sm);
-      background: transparent; color: var(--text);
-      font-weight: 600; font-size: .95rem;
-      border: 1px solid var(--border); transition: all .25s; cursor: pointer;
-    }
-    .btn-secondary:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); }
-    .hero-stats {
-      display: flex; gap: 40px; margin-top: 56px;
-      padding-top: 40px; border-top: 1px solid var(--border);
-      animation: fadeSlideDown .7s .4s ease both;
-    }
-    .stat-num { font-size: 1.8rem; font-weight: 900; color: var(--gold); }
-    .stat-label { font-size: .8rem; color: var(--text3); margin-top: 2px; }
+.m-title{font-size:1.6rem;font-weight:800;margin-bottom:6px}
+.m-sub{color:var(--text2);font-size:.95rem;margin-bottom:20px}
+.m-meta{display:flex;flex-wrap:wrap;gap:12px;padding:16px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid var(--border);margin-bottom:20px}
+.m-mi{font-size:.82rem;color:var(--text3)}
+.m-mi strong{color:var(--text2);display:block;font-size:.78rem;margin-bottom:2px}
+.m-desc{font-size:.9rem;color:var(--text2);line-height:1.9;margin-bottom:20px;white-space:pre-line}
+.m-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.m-tag{padding:5px 12px;border-radius:8px;background:rgba(255,255,255,0.05);color:var(--text2);font-size:.8rem;border:1px solid var(--border)}
+.m-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.btn-dl{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:var(--radius-sm);font-family:var(--font-ar);font-size:.95rem;font-weight:700;cursor:pointer;border:none;transition:.25s;flex:1;justify-content:center;color:#fff;text-decoration:none}
+.btn-dl:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn-out{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:var(--radius-sm);background:transparent;color:var(--text2);border:1px solid var(--border);font-family:var(--font-ar);font-size:.85rem;cursor:pointer;transition:.2s;text-decoration:none}
+.btn-out:hover{border-color:rgba(255,255,255,0.2);color:var(--text)}
+.share-row{padding-top:16px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.share-lbl{font-size:.82rem;color:var(--text3)}
+.shr{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid var(--border);cursor:pointer;font-size:.9rem;transition:.2s;text-decoration:none;color:var(--text)}
+.shr:hover{background:rgba(255,255,255,0.1);transform:scale(1.1)}
 
-    /* ═══════════════════════════════════════════════════════════
-       FILTER BAR
-    ═══════════════════════════════════════════════════════════ */
-    .section { padding: 80px 5%; position: relative; z-index: 1; }
-    .section-header { margin-bottom: 48px; }
-    .section-tag {
-      display: inline-block;
-      font-size: .75rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 800; line-height: 1.2;
-    }
-    .filter-bar {
-      display: flex; flex-wrap: wrap; gap: 10px;
-      margin-bottom: 40px;
-    }
-    .filter-btn {
-      padding: 8px 18px; border-radius: 20px;
-      background: var(--bg3); color: var(--text2);
-      border: 1px solid var(--border);
-      font-family: var(--font-ar); font-size: .85rem;
-      cursor: pointer; transition: all .2s;
-    }
-    .filter-btn:hover { border-color: rgba(255,255,255,0.2); color: var(--text); }
-    .filter-btn.active {
-      background: var(--gold); color: #0A0E1A;
-      border-color: transparent; font-weight: 700;
-    }
+/* ABOUT */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-text p{color:var(--text2);margin-bottom:16px;font-size:.95rem}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.skill{padding:14px 16px;border-radius:var(--radius-sm);background:rgba(255,255,255,0.03);border:1px solid var(--border);transition:.2s}
+.skill:hover{border-color:rgba(255,179,0,0.3)}
+.skill-name{font-size:.85rem;font-weight:600;margin-bottom:6px}
+.skill-bar{height:3px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden}
+.skill-fill{height:100%;border-radius:3px;background:var(--gold)}
 
-    /* ═══════════════════════════════════════════════════════════
-       PROJECTS GRID
-    ═══════════════════════════════════════════════════════════ */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform .3s, border-color .3s, box-shadow .3s;
-      position: relative;
-      animation: fadeUp .5s ease both;
-    }
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255,255,255,0.15);
-      box-shadow: var(--shadow);
-    }
-    .project-card.featured {
-      grid-column: span 2;
-    }
-    .card-banner {
-      height: 180px;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-      font-size: 4rem;
-    }
-    .card-banner::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, transparent 40%, rgba(17,24,39,0.9));
-    }
-    .card-banner-pattern {
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 50%),
-                        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.02) 20px, rgba(255,255,255,0.02) 40px);
-    }
-    .card-body { padding: 20px; }
-    .card-meta {
-      display: flex; align-items: center; gap: 8px;
-      margin-bottom: 10px;
-    }
-    .badge-type {
-      padding: 3px 10px; border-radius: 12px;
-      font-size: .7rem; font-weight: 700;
-    }
-    .badge-status {
-      padding: 3px 10px; border-radius: 12px;
-      font-size: .7rem; font-weight: 600;
-      background: rgba(61,220,132,0.15); color: var(--green);
-    }
-    .card-title {
-      font-size: 1.1rem; font-weight: 700; margin-bottom: 6px;
-    }
-    .card-subtitle {
-      font-size: .85rem; color: var(--text2); margin-bottom: 16px;
-      display: -webkit-box; -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical; overflow: hidden;
-    }
-    .card-tags {
-      display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;
-    }
-    .tag {
-      padding: 3px 9px; border-radius: 6px;
-      background: rgba(255,255,255,0.05); color: var(--text2);
-      font-size: .72rem;
-    }
-    .card-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      padding-top: 16px; border-top: 1px solid var(--border);
-    }
-    .card-stats { display:flex; gap:16px; }
-    .card-stat { font-size:.78rem; color:var(--text3); }
-    .card-stat span { color: var(--text2); font-weight:600; }
-    .card-btn {
-      padding: 8px 16px; border-radius: 8px;
-      font-family: var(--font-ar); font-size: .82rem; font-weight: 700;
-      cursor: pointer; border: none; transition: all .2s;
-    }
+/* CONTACT */
+#contact{text-align:center}
+.contact-card{max-width:600px;margin:0 auto;padding:48px;background:var(--bg2);border:1px solid var(--border);border-radius:24px}
+.clinks{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+.clink{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid var(--border);font-size:.85rem;transition:.2s}
+.clink:hover{border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.07)}
 
-    /* ═══════════════════════════════════════════════════════════
-       PROJECT DETAIL MODAL
-    ═══════════════════════════════════════════════════════════ */
-    .modal-overlay {
-      position: fixed; inset: 0; z-index: 200;
-      background: rgba(5,8,16,0.95);
-      backdrop-filter: blur(12px);
-      display: flex; align-items: flex-start; justify-content: center;
-      padding: 24px 16px;
-      overflow-y: auto;
-      opacity: 0; pointer-events: none;
-      transition: opacity .3s;
-    }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal {
-      background: var(--bg2);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 24px;
-      width: 100%; max-width: 780px;
-      transform: translateY(30px);
-      transition: transform .35s cubic-bezier(.22,.9,.36,1);
-      overflow: hidden; position: relative;
-    }
-    .modal-overlay.open .modal { transform: translateY(0); }
-    .modal-hero {
-      height: 220px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 5rem; position: relative; overflow: hidden;
-    }
-    .modal-hero .modal-hero-pattern {
-      position: absolute; inset: 0;
-      background-image: repeating-linear-gradient(
-        -45deg, transparent, transparent 20px,
-        rgba(255,255,255,0.02) 20px, rgba(255,255,255,0.02) 40px);
-    }
-    .modal-close {
-      position: absolute; top: 16px; left: 16px;
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(0,0,0,0.5); border: 1px solid var(--border);
-      cursor: pointer; color: var(--text2); font-size: 1.1rem;
-      display: flex; align-items: center; justify-content: center;
-      transition: all .2s; z-index: 10;
-    }
-    .modal-close:hover { color: var(--text); background: rgba(255,255,255,0.1); }
-    .modal-body { padding: 28px 32px 36px; }
-    .modal-header { margin-bottom: 20px; }
-    .modal-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
-    .modal-subtitle { color: var(--text2); font-size: .95rem; }
-    .modal-meta {
-      display: flex; flex-wrap: wrap; gap: 12px;
-      margin: 20px 0; padding: 16px;
-      background: rgba(255,255,255,0.03); border-radius: 12px;
-      border: 1px solid var(--border);
-    }
-    .meta-item { font-size: .82rem; color: var(--text3); }
-    .meta-item strong { color: var(--text2); display: block; font-size: .78rem; margin-bottom: 2px; }
-    .modal-desc {
-      font-size: .9rem; color: var(--text2); line-height: 1.9;
-      margin-bottom: 24px; white-space: pre-line;
-    }
-    .modal-tags {
-      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
-    }
-    .modal-tag {
-      padding: 5px 12px; border-radius: 8px;
-      background: rgba(255,255,255,0.05); color: var(--text2);
-      font-size: .8rem; border: 1px solid var(--border);
-    }
-    .modal-actions {
-      display: flex; flex-wrap: wrap; gap: 12px;
-    }
-    .btn-download {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 28px; border-radius: var(--radius-sm);
-      font-family: var(--font-ar); font-size: .95rem; font-weight: 700;
-      cursor: pointer; border: none; transition: all .25s; flex: 1;
-      justify-content: center;
-    }
-    .btn-download:hover { transform: translateY(-2px); }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 20px; border-radius: var(--radius-sm);
-      background: transparent; color: var(--text2);
-      border: 1px solid var(--border); font-family: var(--font-ar);
-      font-size: .85rem; cursor: pointer; transition: all .2s;
-    }
-    .btn-outline:hover { border-color: rgba(255,255,255,0.2); color: var(--text); }
-    .share-row {
-      margin-top: 16px; padding-top: 16px;
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .share-label { font-size: .82rem; color: var(--text3); }
-    .share-btn {
-      width: 34px; height: 34px; border-radius: 8px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(255,255,255,0.05); border:1px solid var(--border);
-      cursor:pointer; font-size:.9rem; transition:all .2s;
-    }
-    .share-btn:hover { background:rgba(255,255,255,0.1); transform:scale(1.1); }
+/* FOOTER */
+footer{padding:32px 5%;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:.82rem;color:var(--text3)}
 
-    /* ═══════════════════════════════════════════════════════════
-       ABOUT SECTION
-    ═══════════════════════════════════════════════════════════ */
-    #about { background: var(--bg2); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
-    }
-    .about-text p {
-      color: var(--text2); margin-bottom: 16px; font-size: .95rem;
-    }
-    .skills-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-    }
-    .skill-item {
-      padding: 14px 16px; border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-      transition: border-color .2s;
-    }
-    .skill-item:hover { border-color: rgba(255,179,0,0.3); }
-    .skill-name { font-size: .85rem; font-weight: 600; margin-bottom: 6px; }
-    .skill-bar { height: 3px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow:hidden; }
-    .skill-fill { height: 100%; border-radius: 3px; background: var(--gold); transition: width 1s ease; }
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--bg3);color:var(--text);padding:12px 24px;border-radius:10px;border:1px solid var(--border);font-size:.85rem;box-shadow:var(--shadow);z-index:999;transition:transform .3s;pointer-events:none;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0)}
 
-    /* ═══════════════════════════════════════════════════════════
-       CONTACT SECTION
-    ═══════════════════════════════════════════════════════════ */
-    #contact {
-      text-align: center;
-      padding: 100px 5%;
-    }
-    .contact-card {
-      max-width: 600px; margin: 0 auto;
-      padding: 48px;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-    }
-    .contact-links { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:28px; }
-    .contact-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 20px; border-radius: 10px;
-      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-      font-size: .85rem; transition: all .2s;
-    }
-    .contact-link:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.07); }
+/* SCROLL PROGRESS */
+.progress{position:fixed;top:64px;right:0;left:0;height:2px;background:rgba(255,255,255,0.05);z-index:99}
+.progress-fill{height:100%;background:var(--gold);width:0;transition:width .1s}
 
-    /* ═══════════════════════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════════════════════ */
-    footer {
-      padding: 32px 5%;
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      font-size: .82rem; color: var(--text3);
-    }
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.revealed{opacity:1;transform:translateY(0)}
 
-    /* ═══════════════════════════════════════════════════════════
-       TOAST
-    ═══════════════════════════════════════════════════════════ */
-    .toast {
-      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
-      background: var(--bg3); color: var(--text);
-      padding: 12px 24px; border-radius: 10px;
-      border: 1px solid var(--border); font-size: .85rem;
-      box-shadow: var(--shadow); z-index: 999;
-      transition: transform .3s; pointer-events: none;
-    }
-    .toast.show { transform: translateX(-50%) translateY(0); }
+/* EMPTY STATE */
+.empty{text-align:center;padding:60px 20px;color:var(--text3);grid-column:1/-1}
+.empty h3{font-size:1.1rem;color:var(--text2);margin-bottom:8px}
 
-    /* ═══════════════════════════════════════════════════════════
-       SCROLL INDICATOR
-    ═══════════════════════════════════════════════════════════ */
-    .scroll-progress {
-      position: fixed; top: 64px; right: 0; left: 0;
-      height: 2px; background: rgba(255,255,255,0.05); z-index: 99;
-    }
-    .scroll-progress-fill {
-      height: 100%; background: var(--gold); width: 0%;
-      transition: width .1s;
-    }
+/* ANIMATIONS */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
 
-    /* ═══════════════════════════════════════════════════════════
-       ANIMATIONS
-    ═══════════════════════════════════════════════════════════ */
-    @keyframes fadeSlideDown {
-      from { opacity:0; transform:translateY(-16px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(20px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-    @keyframes pulse {
-      0%,100% { opacity:1; transform:scale(1); }
-      50%     { opacity:.6; transform:scale(1.3); }
-    }
-    .hidden { opacity:0; transform:translateY(24px); transition: opacity .6s, transform .6s; }
-    .visible { opacity:1; transform:translateY(0); }
-
-    /* ═══════════════════════════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════════════════════════ */
-    @media (max-width: 768px) {
-      .nav-links { display:none; }
-      .nav-hamburger { display:flex; }
-      .nav-links.open {
-        display:flex; flex-direction:column; position:fixed;
-        top:64px; right:0; left:0; background:var(--bg2);
-        padding:24px; border-bottom:1px solid var(--border); gap:20px;
-      }
-      .project-card.featured { grid-column: span 1; }
-      .about-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap:24px; flex-wrap:wrap; }
-      .modal-body { padding: 20px; }
-      .contact-card { padding: 28px 20px; }
-      footer { flex-direction:column; gap:12px; text-align:center; }
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:64px;right:0;left:0;background:var(--bg2);padding:24px;border-bottom:1px solid var(--border);gap:20px}
+  .card.big{grid-column:span 1}
+  .about-grid{grid-template-columns:1fr}
+  .hero-stats{gap:20px}
+  .m-body{padding:20px}
+  .contact-card{padding:28px 20px}
+  footer{flex-direction:column;gap:12px;text-align:center}
+}
+@media(max-width:480px){
+  .grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-<!-- ──────────────────────────────────────────────────────────
-     NAVBAR
-──────────────────────────────────────────────────────────── -->
-<nav id="navbar">
-  <div class="nav-logo">
-    <div class="dot"></div>
-    <span>AQ</span><span style="color:var(--text)">Dev</span>
-  </div>
+<!-- SCROLL PROGRESS -->
+<div class="progress"><div class="progress-fill" id="pFill"></div></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo"><div class="dot"></div><span style="font-family:var(--font-en)">AQ<em>Dev</em></span></div>
   <div class="nav-links" id="navLinks">
-    <a href="#hero" class="active">الرئيسية</a>
-    <a href="#projects">المشاريع</a>
-    <a href="#about">عني</a>
-    <a href="#contact">التواصل</a>
+    <a href="#hero" id="nHero" class="active">الرئيسية</a>
+    <a href="#projects" id="nProj">المشاريع</a>
+    <a href="#about" id="nAbout">عني</a>
+    <a href="#contact" id="nContact">التواصل</a>
   </div>
-  <button class="nav-cta" onclick="scrollTo({top:document.getElementById('projects').offsetTop-80,behavior:'smooth'})">
-    تصفح المشاريع ↓
-  </button>
-  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+  <button class="nav-cta" id="navCta">تصفح المشاريع ↓</button>
+  <button class="nav-ham" id="ham" aria-label="القائمة">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
-<!-- شريط التقدم -->
-<div class="scroll-progress"><div class="scroll-progress-fill" id="scrollFill"></div></div>
-
-<!-- ──────────────────────────────────────────────────────────
-     HERO
-──────────────────────────────────────────────────────────── -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="hero-badge">
-      <div class="live"></div>
-      متاح للعمل — Available for Work
-    </div>
-    <h1 class="hero-title">
-      مطور تطبيقات<br>
-      <em>متكاملة ومبتكرة</em>
-    </h1>
-    <p class="hero-subtitle">
-      أبني تطبيقات Android وسطح المكتب ومواقع الويب بأحدث التقنيات.
-      متخصص في Flutter وFirebase والذكاء الاصطناعي.
-    </p>
-    <div class="hero-actions">
-      <button class="btn-primary" onclick="scrollTo({top:document.getElementById('projects').offsetTop-80,behavior:'smooth'})">
-        🚀 تصفح مشاريعي
-      </button>
-      <button class="btn-secondary" onclick="scrollTo({top:document.getElementById('contact').offsetTop-80,behavior:'smooth'})">
-        💬 تواصل معي
-      </button>
+    <div class="hero-badge"><div class="live"></div>متاح للعمل — Available for Work</div>
+    <h1 class="hero-title">مطور تطبيقات<br><em>متكاملة ومبتكرة</em></h1>
+    <p class="hero-sub">أبني تطبيقات Android وسطح المكتب ومواقع الويب بأحدث التقنيات. متخصص في Flutter وFirebase والذكاء الاصطناعي.</p>
+    <div class="hero-btns">
+      <button class="btn-gold" id="heroScroll">🚀 تصفح مشاريعي</button>
+      <button class="btn-ghost" id="heroContact">💬 تواصل معي</button>
     </div>
     <div class="hero-stats">
-      <div>
-        <div class="stat-num" id="projectCount">1+</div>
-        <div class="stat-label">مشروع منشور</div>
-      </div>
-      <div>
-        <div class="stat-num">2+</div>
-        <div class="stat-label">سنة خبرة</div>
-      </div>
-      <div>
-        <div class="stat-num">100%</div>
-        <div class="stat-label">رضا العميل</div>
-      </div>
+      <div><div class="stat-n" id="pCount">1+</div><div class="stat-l">مشروع منشور</div></div>
+      <div><div class="stat-n">2+</div><div class="stat-l">سنة خبرة</div></div>
+      <div><div class="stat-n">100%</div><div class="stat-l">رضا العميل</div></div>
     </div>
   </div>
 </section>
 
-<!-- ──────────────────────────────────────────────────────────
-     PROJECTS
-──────────────────────────────────────────────────────────── -->
+<!-- PROJECTS -->
 <section id="projects" class="section">
-  <div class="section-header">
-    <div class="section-tag">▸ المشاريع</div>
-    <h2 class="section-title">تطبيقاتي ومشاريعي</h2>
+  <div class="sec-head">
+    <div class="sec-tag">▸ المشاريع</div>
+    <h2 class="sec-title">تطبيقاتي ومشاريعي</h2>
   </div>
-
-  <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-filter="all" onclick="filterProjects('all',this)">الكل</button>
-    <button class="filter-btn" data-filter="android" onclick="filterProjects('android',this)">📱 Android</button>
-    <button class="filter-btn" data-filter="webapp" onclick="filterProjects('webapp',this)">🌐 تطبيق ويب</button>
-    <button class="filter-btn" data-filter="desktop" onclick="filterProjects('desktop',this)">💻 سطح المكتب</button>
-    <button class="filter-btn" data-filter="website" onclick="filterProjects('website',this)">🔗 مواقع</button>
+  <div class="filter-bar">
+    <button class="fbtn active" id="fAll">الكل</button>
+    <button class="fbtn" id="fAndroid">📱 Android</button>
+    <button class="fbtn" id="fWebapp">🌐 تطبيق ويب</button>
+    <button class="fbtn" id="fDesktop">💻 سطح المكتب</button>
+    <button class="fbtn" id="fWebsite">🔗 مواقع</button>
   </div>
-
-  <div class="projects-grid" id="projectsGrid"></div>
+  <div class="grid" id="grid"></div>
 </section>
 
-<!-- ──────────────────────────────────────────────────────────
-     ABOUT
-──────────────────────────────────────────────────────────── -->
-<section id="about" class="section">
-  <div class="section-header hidden">
-    <div class="section-tag">▸ عني</div>
-    <h2 class="section-title">من أنا؟</h2>
+<!-- ABOUT -->
+<section id="about" class="section" style="background:var(--bg2)">
+  <div class="sec-head reveal">
+    <div class="sec-tag">▸ عني</div>
+    <h2 class="sec-title">من أنا؟</h2>
   </div>
-  <div class="about-grid hidden">
+  <div class="about-grid reveal">
     <div class="about-text">
-      <p>مطور تطبيقات شغوف بالتقنية والإبداع، أبني تطبيقات احترافية للأجهزة المحمولة وسطح المكتب والويب باستخدام أحدث التقنيات.</p>
+      <p>مطور تطبيقات شغوف بالتقنية والإبداع، أبني تطبيقات احترافية للأجهزة المحمولة وسطح المكتب والويب.</p>
       <p>أتخصص في بناء تطبيقات Flutter/Firebase متكاملة من الصفر حتى النشر، مع اهتمام خاص بتجربة المستخدم وجودة الكود.</p>
-      <p>أسعى دائماً لإضافة قيمة حقيقية من خلال دمج الذكاء الاصطناعي في التطبيقات العملية.</p>
-      <div style="margin-top:28px">
-        <button class="btn-primary" onclick="scrollTo({top:document.getElementById('contact').offsetTop-80,behavior:'smooth'})">
-          📩 تواصل للعمل معاً
-        </button>
-      </div>
+      <p>أسعى لدمج الذكاء الاصطناعي في التطبيقات العملية لإضافة قيمة حقيقية.</p>
+      <div style="margin-top:28px"><button class="btn-gold" id="aboutContact">📩 تواصل للعمل معاً</button></div>
     </div>
     <div class="skills-grid">
-      <div class="skill-item"><div class="skill-name">Flutter / Dart</div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
-      <div class="skill-item"><div class="skill-name">Firebase</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-      <div class="skill-item"><div class="skill-name">C# / .NET</div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-      <div class="skill-item"><div class="skill-name">Node.js</div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-      <div class="skill-item"><div class="skill-name">Android</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-      <div class="skill-item"><div class="skill-name">AI Integration</div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+      <div class="skill"><div class="skill-name">Flutter / Dart</div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+      <div class="skill"><div class="skill-name">Firebase</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+      <div class="skill"><div class="skill-name">C# / .NET</div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+      <div class="skill"><div class="skill-name">Node.js</div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+      <div class="skill"><div class="skill-name">Android</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+      <div class="skill"><div class="skill-name">AI Integration</div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ──────────────────────────────────────────────────────────
-     CONTACT
-──────────────────────────────────────────────────────────── -->
+<!-- CONTACT -->
 <section id="contact" class="section">
-  <div class="contact-card hidden">
+  <div class="contact-card reveal">
     <div style="font-size:2.5rem;margin-bottom:16px">📬</div>
     <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:10px">لنبني شيئاً رائعاً معاً</h2>
     <p style="color:var(--text2);font-size:.95rem">هل لديك مشروع أو فكرة؟ تواصل معي وسأكون سعيداً بمساعدتك.</p>
-    <div class="contact-links">
-      <a href="mailto:aba849198@gmail.com" class="contact-link">✉️ البريد الإلكتروني</a>
-      <a href="https://github.com/sba849198-sketch" target="_blank" class="contact-link">🐙 GitHub</a>
-      <a href="https://t.me/YOUR_TELEGRAM" target="_blank" class="contact-link">✈️ Telegram</a>
-      <a href="https://wa.me/967778942829" target="_blank" class="contact-link">📱 WhatsApp</a>
+    <div class="clinks">
+      <a href="mailto:your@email.com" class="clink">✉️ البريد الإلكتروني</a>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener" class="clink">🐙 GitHub</a>
+      <a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener" class="clink">✈️ Telegram</a>
+      <a href="https://wa.me/966XXXXXXXXX" target="_blank" rel="noopener" class="clink">📱 WhatsApp</a>
     </div>
   </div>
 </section>
 
-<!-- ──────────────────────────────────────────────────────────
-     FOOTER
-──────────────────────────────────────────────────────────── -->
 <footer>
   <div>صُنع بـ ❤️ من <strong>عبدالقدوس</strong> — AQ Dev</div>
-  <div>© 2026 — جميع الحقوق محفوظة</div>
+  <div>© 2025 — جميع الحقوق محفوظة</div>
 </footer>
 
-<!-- ──────────────────────────────────────────────────────────
-     PROJECT DETAIL MODAL
-──────────────────────────────────────────────────────────── -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+<!-- MODAL -->
+<div class="overlay" id="overlay">
   <div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="modal-hero" id="modalHero">
-      <div class="modal-hero-pattern"></div>
-      <span id="modalIcon" style="position:relative;z-index:1">📱</span>
-    </div>
-    <div class="modal-body">
-      <div class="modal-header">
-        <h2 class="modal-title" id="modalTitle"></h2>
-        <p class="modal-subtitle" id="modalSubtitle"></p>
-      </div>
-      <div class="modal-meta" id="modalMeta"></div>
-      <div class="modal-desc" id="modalDesc"></div>
-      <div class="modal-tags" id="modalTags"></div>
-      <div class="modal-actions" id="modalActions"></div>
-      <div class="share-row" id="shareRow"></div>
+    <button class="m-close" id="mClose">✕</button>
+    <div class="m-hero" id="mHero"><div class="m-pat"></div><span class="m-icon" id="mIcon">📱</span></div>
+    <div class="m-body">
+      <h2 class="m-title" id="mTitle"></h2>
+      <p class="m-sub" id="mSub"></p>
+      <div id="mScreenshots"></div>
+      <div class="m-meta" id="mMeta"></div>
+      <div class="m-desc" id="mDesc"></div>
+      <div class="m-tags" id="mTags"></div>
+      <div class="m-actions" id="mActions"></div>
+      <div class="share-row" id="mShare"></div>
     </div>
   </div>
 </div>
@@ -715,243 +328,333 @@
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<!-- ──────────────────────────────────────────────────────────
-     SCRIPTS
-──────────────────────────────────────────────────────────── -->
 <script src="js/projects.js"></script>
 <script>
-/* ═══════════════════════════════════════════════════════════
-   RENDER PROJECTS
-═══════════════════════════════════════════════════════════ */
-function renderProjects(filter = 'all') {
-  const grid = document.getElementById('projectsGrid');
-  const list = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.type === filter);
+// ════════════════════════════════════════════════════════════
+//  ALL FUNCTIONS IN GLOBAL SCOPE — required for GitHub Pages
+// ════════════════════════════════════════════════════════════
 
-  grid.innerHTML = list.map((p, i) => {
-    const typeInfo = PROJECT_TYPES[p.type] || PROJECT_TYPES.android;
-    const delay = (i % 6) * 80;
-    return `
-      <div class="project-card ${p.featured && filter==='all' ? 'featured' : ''}"
-           style="animation-delay:${delay}ms"
-           onclick="openProject('${p.id}')"
-           data-type="${p.type}">
-        <div class="card-banner" style="background:linear-gradient(135deg,${p.color}22,${p.accentColor||p.color}11)">
-          <div class="card-banner-pattern"></div>
-          <span style="position:relative;z-index:1;filter:drop-shadow(0 4px 12px ${p.color}66)">${p.icon}</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="badge-type" style="background:${p.color}20;color:${p.color}">${typeInfo.badge}</span>
-            <span class="badge-status">${p.status === 'released' ? '✓ منشور' : p.status === 'beta' ? '⚡ تجريبي' : '⏳ قريباً'}</span>
-          </div>
-          <h3 class="card-title">${p.title}</h3>
-          <p class="card-subtitle">${p.subtitle}</p>
-          <div class="card-tags">
-            ${p.tags.slice(0,3).map(t => `<span class="tag">${t}</span>`).join('')}
-          </div>
-          <div class="card-footer">
-            <div class="card-stats">
-              ${p.stats.downloads ? `<div class="card-stat"><span>${p.stats.downloads}</span> تحميل</div>` : ''}
-              ${p.stats.rating ? `<div class="card-stat">⭐ <span>${p.stats.rating}</span></div>` : ''}
-            </div>
-            <button class="card-btn" style="background:${p.color};color:#fff">
-              ${typeInfo.downloadLabel} →
-            </button>
-          </div>
-        </div>
-      </div>`;
-  }).join('');
+var currentFilter = 'all';
 
-  // Update count
-  document.getElementById('projectCount').textContent = PROJECTS.length + '+';
+// ── Render projects ──────────────────────────────────────────
+function renderProjects(filter) {
+  currentFilter = filter || 'all';
+  var grid = document.getElementById('grid');
+  var list = currentFilter === 'all'
+    ? PROJECTS
+    : PROJECTS.filter(function(p){ return p.type === currentFilter; });
+
+  if (!list.length) {
+    grid.innerHTML = '<div class="empty"><h3>لا توجد مشاريع في هذا التصنيف بعد</h3><p>سيتم إضافة مشاريع قريباً</p></div>';
+    return;
+  }
+
+  var html = '';
+  for (var i = 0; i < list.length; i++) {
+    var p = list[i];
+    var t = PROJECT_TYPES[p.type] || PROJECT_TYPES.android;
+    var delay = (i % 6) * 80;
+    var isBig = p.featured && currentFilter === 'all';
+    var statusLabel = p.status === 'released' ? '✓ منشور' : p.status === 'beta' ? '⚡ تجريبي' : '⏳ قريباً';
+
+    // Tags HTML
+    var tagsHtml = '';
+    for (var j = 0; j < Math.min(p.tags.length, 3); j++) {
+      tagsHtml += '<span class="tag">' + p.tags[j] + '</span>';
+    }
+
+    // Screenshots on card
+    var ssHtml = '';
+    if (p.screenshots && p.screenshots.length > 0) {
+      ssHtml = '<div class="card-screenshots">';
+      var showCount = Math.min(p.screenshots.length, 3);
+      for (var k = 0; k < showCount; k++) {
+        ssHtml += '<img class="card-ss" src="' + p.screenshots[k] + '" alt="لقطة شاشة" loading="lazy">';
+      }
+      if (p.screenshots.length > 3) {
+        ssHtml += '<div class="card-ss-more">+' + (p.screenshots.length - 3) + '</div>';
+      }
+      ssHtml += '</div>';
+    }
+
+    var statsHtml = '';
+    if (p.stats) {
+      if (p.stats.downloads) statsHtml += '<div class="cstat"><span>' + p.stats.downloads + '</span> تحميل</div>';
+      if (p.stats.rating) statsHtml += '<div class="cstat">⭐ <span>' + p.stats.rating + '</span></div>';
+    }
+
+    html += '<div class="card' + (isBig ? ' big' : '') + '" '
+      + 'style="animation-delay:' + delay + 'ms" '
+      + 'data-id="' + p.id + '" data-type="' + p.type + '">'
+      + '<div class="card-img" style="background:linear-gradient(135deg,' + p.color + '33,' + (p.accentColor || p.color) + '11)">'
+      + '<div class="pat"></div>'
+      + '<span class="icon">' + p.icon + '</span>'
+      + '</div>'
+      + ssHtml
+      + '<div class="card-body">'
+      + '<div class="card-meta">'
+      + '<span class="badge" style="background:' + p.color + '22;color:' + p.color + '">' + t.badge + '</span>'
+      + '<span class="badge-ok">' + statusLabel + '</span>'
+      + '</div>'
+      + '<h3 class="card-title">' + p.title + '</h3>'
+      + '<p class="card-sub">' + p.subtitle + '</p>'
+      + '<div class="card-tags">' + tagsHtml + '</div>'
+      + '<div class="card-foot">'
+      + '<div class="card-stats">' + statsHtml + '</div>'
+      + '<button class="card-btn" style="background:' + p.color + '">' + t.downloadLabel + ' →</button>'
+      + '</div></div></div>';
+  }
+
+  grid.innerHTML = html;
+  document.getElementById('pCount').textContent = PROJECTS.length + '+';
+
+  // Attach click events
+  var cards = grid.querySelectorAll('.card');
+  for (var ci = 0; ci < cards.length; ci++) {
+    (function(card){
+      card.addEventListener('click', function(){
+        openProject(card.getAttribute('data-id'));
+      });
+    })(cards[ci]);
+  }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   FILTER
-═══════════════════════════════════════════════════════════ */
-function filterProjects(type, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderProjects(type);
-}
-
-/* ═══════════════════════════════════════════════════════════
-   MODAL — PROJECT DETAIL
-═══════════════════════════════════════════════════════════ */
+// ── Open project modal ───────────────────────────────────────
 function openProject(id) {
-  const p = PROJECTS.find(x => x.id === id);
+  var p = null;
+  for (var i = 0; i < PROJECTS.length; i++) {
+    if (PROJECTS[i].id === id) { p = PROJECTS[i]; break; }
+  }
   if (!p) return;
-  const typeInfo = PROJECT_TYPES[p.type] || PROJECT_TYPES.android;
 
-  // Update URL for deep linking + SEO
-  history.pushState({project: id}, p.title, `?project=${id}`);
-  document.title = `${p.title} — AQ Dev`;
+  var t = PROJECT_TYPES[p.type] || PROJECT_TYPES.android;
+
+  // Update URL for deep linking
+  try {
+    history.pushState({project: id}, p.title, '?project=' + id);
+    document.title = p.title + ' — AQ Dev';
+  } catch(e) {}
 
   // Hero
-  document.getElementById('modalHero').style.background =
-    `linear-gradient(135deg, ${p.color}44, ${p.accentColor||p.color}22)`;
-  document.getElementById('modalIcon').textContent = p.icon;
-  document.getElementById('modalTitle').textContent = p.title;
-  document.getElementById('modalSubtitle').textContent = p.subtitle;
+  document.getElementById('mHero').style.background =
+    'linear-gradient(135deg,' + p.color + '44,' + (p.accentColor||p.color) + '22)';
+  document.getElementById('mIcon').textContent = p.icon;
+  document.getElementById('mTitle').textContent = p.title;
+  document.getElementById('mSub').textContent = p.subtitle;
+  document.getElementById('mDesc').textContent = p.longDescription || p.description;
+
+  // Screenshots gallery
+  var ssEl = document.getElementById('mScreenshots');
+  if (p.screenshots && p.screenshots.length > 0) {
+    var ssHtml = '<div class="m-screenshots">';
+    for (var i = 0; i < p.screenshots.length; i++) {
+      ssHtml += '<img class="m-ss" src="' + p.screenshots[i] + '" alt="لقطة شاشة ' + (i+1) + '" loading="lazy">';
+    }
+    ssHtml += '</div>';
+    ssEl.innerHTML = ssHtml;
+    ssEl.style.display = 'block';
+  } else {
+    ssEl.innerHTML = '';
+    ssEl.style.display = 'none';
+  }
 
   // Meta
-  document.getElementById('modalMeta').innerHTML = [
-    {label:'النوع', val: typeInfo.label},
-    {label:'المنصة', val: p.platform},
-    {label:'الإصدار', val: p.version},
-    {label:'الحجم', val: p.size},
-    {label:'التصنيف', val: p.category},
-    {label:'السنة', val: p.date},
-  ].map(m => m.val ? `<div class="meta-item"><strong>${m.label}</strong>${m.val}</div>` : '').join('');
-
-  // Description
-  document.getElementById('modalDesc').textContent = p.longDescription || p.description;
+  var metaItems = [
+    {l:'النوع', v: t.label},
+    {l:'المنصة', v: p.platform},
+    {l:'الإصدار', v: p.version},
+    {l:'الحجم', v: p.size},
+    {l:'التصنيف', v: p.category},
+    {l:'السنة', v: p.date}
+  ];
+  var metaHtml = '';
+  for (var m = 0; m < metaItems.length; m++) {
+    if (metaItems[m].v) {
+      metaHtml += '<div class="m-mi"><strong>' + metaItems[m].l + '</strong>' + metaItems[m].v + '</div>';
+    }
+  }
+  document.getElementById('mMeta').innerHTML = metaHtml;
 
   // Tags
-  document.getElementById('modalTags').innerHTML =
-    p.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
+  var tagsHtml = '';
+  for (var ti = 0; ti < p.tags.length; ti++) {
+    tagsHtml += '<span class="m-tag">' + p.tags[ti] + '</span>';
+  }
+  document.getElementById('mTags').innerHTML = tagsHtml;
 
   // Actions
-  const actionsEl = document.getElementById('modalActions');
-  actionsEl.innerHTML = '';
+  var actEl = document.getElementById('mActions');
+  actEl.innerHTML = '';
 
-  if (p.downloadUrl && p.downloadUrl !== '#') {
-    const dlBtn = document.createElement('a');
-    dlBtn.href = p.downloadUrl;
-    dlBtn.download = '';
-    dlBtn.className = 'btn-download';
-    dlBtn.style.background = p.color;
-    dlBtn.style.color = '#fff';
-    dlBtn.innerHTML = `⬇️ ${typeInfo.downloadLabel}`;
-    dlBtn.addEventListener('click', e => {
-      showToast('🚀 جاري التحميل...');
-    });
-    actionsEl.appendChild(dlBtn);
+  if (p.downloadUrl && p.downloadUrl.indexOf('YOUR_USERNAME') === -1) {
+    var dlA = document.createElement('a');
+    dlA.href = p.downloadUrl;
+    dlA.className = 'btn-dl';
+    dlA.style.background = p.color;
+    dlA.innerHTML = '⬇️ ' + t.downloadLabel;
+    // For APK: direct download
+    if (p.type === 'android') {
+      dlA.setAttribute('download', '');
+    } else {
+      dlA.target = '_blank';
+      dlA.rel = 'noopener';
+    }
+    dlA.addEventListener('click', function(){ showToast('🚀 جاري التحميل...'); });
+    actEl.appendChild(dlA);
   } else {
-    const dlBtn = document.createElement('button');
-    dlBtn.className = 'btn-download';
+    var dlBtn = document.createElement('button');
+    dlBtn.className = 'btn-dl';
     dlBtn.style.background = 'rgba(255,255,255,0.05)';
-    dlBtn.style.color = 'var(--text2)';
+    dlBtn.style.color = 'var(--text3)';
     dlBtn.style.border = '1px solid var(--border)';
     dlBtn.style.cursor = 'not-allowed';
-    dlBtn.innerHTML = '⏳ قريباً';
-    actionsEl.appendChild(dlBtn);
+    dlBtn.innerHTML = '⏳ رابط التحميل قريباً';
+    actEl.appendChild(dlBtn);
   }
 
   if (p.demoUrl) {
-    const demoBtn = document.createElement('a');
-    demoBtn.href = p.demoUrl;
-    demoBtn.target = '_blank';
-    demoBtn.className = 'btn-outline';
-    demoBtn.innerHTML = '🌐 عرض تجريبي';
-    actionsEl.appendChild(demoBtn);
+    var dA = document.createElement('a');
+    dA.href = p.demoUrl; dA.target = '_blank'; dA.rel = 'noopener';
+    dA.className = 'btn-out'; dA.innerHTML = '🌐 عرض تجريبي';
+    actEl.appendChild(dA);
   }
-
   if (p.sourceUrl) {
-    const srcBtn = document.createElement('a');
-    srcBtn.href = p.sourceUrl;
-    srcBtn.target = '_blank';
-    srcBtn.className = 'btn-outline';
-    srcBtn.innerHTML = '🐙 الكود المصدري';
-    actionsEl.appendChild(srcBtn);
+    var sA = document.createElement('a');
+    sA.href = p.sourceUrl; sA.target = '_blank'; sA.rel = 'noopener';
+    sA.className = 'btn-out'; sA.innerHTML = '🐙 الكود المصدري';
+    actEl.appendChild(sA);
   }
 
-  // Share row
-  const pageUrl = `${location.origin}${location.pathname}?project=${id}`;
-  const shareText = `${p.title} — ${p.subtitle}`;
-  document.getElementById('shareRow').innerHTML = `
-    <span class="share-label">مشاركة:</span>
-    <button class="share-btn" title="نسخ الرابط" onclick="copyLink('${pageUrl}')">🔗</button>
-    <a class="share-btn" href="https://wa.me/?text=${encodeURIComponent(shareText+'\n'+pageUrl)}" target="_blank" title="WhatsApp">💬</a>
-    <a class="share-btn" href="https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}" target="_blank" title="Telegram">✈️</a>
-    <a class="share-btn" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl)}" target="_blank" title="X/Twitter">𝕏</a>
-  `;
+  // Share
+  var pageUrl = location.protocol + '//' + location.host + location.pathname + '?project=' + id;
+  var shareText = p.title + ' — ' + p.subtitle;
+  document.getElementById('mShare').innerHTML =
+    '<span class="share-lbl">مشاركة:</span>'
+    + '<button class="shr" title="نسخ الرابط" id="copyBtn">🔗</button>'
+    + '<a class="shr" href="https://wa.me/?text=' + encodeURIComponent(shareText + '\n' + pageUrl) + '" target="_blank" rel="noopener" title="WhatsApp">💬</a>'
+    + '<a class="shr" href="https://t.me/share/url?url=' + encodeURIComponent(pageUrl) + '&text=' + encodeURIComponent(shareText) + '" target="_blank" rel="noopener" title="Telegram">✈️</a>'
+    + '<a class="shr" href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(pageUrl) + '" target="_blank" rel="noopener" title="X">𝕏</a>';
 
-  // Open modal
-  document.getElementById('modalOverlay').classList.add('open');
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    copyLink(pageUrl);
+  });
+
+  // Open
+  document.getElementById('overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
   document.body.style.overflow = '';
-  history.pushState({}, document.title, location.pathname);
-  document.title = 'عبدالقدوس — مطور تطبيقات محترف | AQ Dev';
+  try {
+    history.pushState({}, 'AQ Dev', location.pathname);
+    document.title = 'عبدالقدوس — مطور تطبيقات | AQ Dev';
+  } catch(e) {}
 }
 
-function closeModalOutside(e) {
-  if (e.target === document.getElementById('modalOverlay')) closeModal();
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-/* ═══════════════════════════════════════════════════════════
-   DEEP LINKING — فتح مشروع من URL مباشرة
-═══════════════════════════════════════════════════════════ */
-function handleDeepLink() {
-  const params = new URLSearchParams(location.search);
-  const projectId = params.get('project');
-  if (projectId) {
-    setTimeout(() => openProject(projectId), 300);
+function copyLink(url) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(function(){ showToast('✅ تم نسخ الرابط!'); });
+  } else {
+    // Fallback
+    var ta = document.createElement('textarea');
+    ta.value = url; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('✅ تم نسخ الرابط!');
   }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   UTILS
-═══════════════════════════════════════════════════════════ */
-function copyLink(url) {
-  navigator.clipboard.writeText(url).then(() => showToast('✅ تم نسخ الرابط!'));
-}
-
 function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2800);
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 2800);
 }
 
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('open');
+function scrollToSection(id) {
+  var el = document.getElementById(id);
+  if (el) { window.scrollTo({top: el.offsetTop - 80, behavior: 'smooth'}); }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   SCROLL — progress + navbar + scroll-reveal
-═══════════════════════════════════════════════════════════ */
-window.addEventListener('scroll', () => {
-  const scroll = window.scrollY;
-  const height = document.body.scrollHeight - window.innerHeight;
-  document.getElementById('scrollFill').style.width = (scroll/height*100) + '%';
+// ── Deep link ────────────────────────────────────────────────
+function handleDeepLink() {
+  var params = new URLSearchParams(location.search);
+  var pid = params.get('project');
+  if (pid) { setTimeout(function(){ openProject(pid); }, 400); }
+}
 
-  // Navbar scroll style
-  document.getElementById('navbar').style.background =
+// ── Scroll ───────────────────────────────────────────────────
+window.addEventListener('scroll', function(){
+  var scroll = window.scrollY;
+  var height = document.body.scrollHeight - window.innerHeight;
+  document.getElementById('pFill').style.width = (height > 0 ? (scroll/height*100) : 0) + '%';
+  document.getElementById('nav').style.background =
     scroll > 20 ? 'rgba(10,14,26,0.98)' : 'rgba(10,14,26,0.85)';
 
-  // Active nav link
-  const sections = ['hero','projects','about','contact'];
-  let current = 'hero';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && scroll >= el.offsetTop - 120) current = id;
-  });
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#'+current);
-  });
-
   // Scroll reveal
-  document.querySelectorAll('.hidden').forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 80) el.classList.add('visible');
-  });
+  var revels = document.querySelectorAll('.reveal');
+  for (var i = 0; i < revels.length; i++) {
+    if (revels[i].getBoundingClientRect().top < window.innerHeight - 80) {
+      revels[i].classList.add('revealed');
+    }
+  }
 });
 
-/* ═══════════════════════════════════════════════════════════
-   INIT
-═══════════════════════════════════════════════════════════ */
-document.addEventListener('DOMContentLoaded', () => {
-  renderProjects();
+// ── Init ─────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function(){
+
+  // Render
+  renderProjects('all');
+
+  // Filter buttons
+  var filters = {
+    fAll: 'all', fAndroid: 'android',
+    fWebapp: 'webapp', fDesktop: 'desktop', fWebsite: 'website'
+  };
+  Object.keys(filters).forEach(function(btnId){
+    var btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.fbtn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      renderProjects(filters[btnId]);
+    });
+  });
+
+  // Nav buttons
+  document.getElementById('navCta').addEventListener('click', function(){ scrollToSection('projects'); });
+  document.getElementById('heroScroll').addEventListener('click', function(){ scrollToSection('projects'); });
+  document.getElementById('heroContact').addEventListener('click', function(){ scrollToSection('contact'); });
+  document.getElementById('aboutContact').addEventListener('click', function(){ scrollToSection('contact'); });
+
+  // Nav links
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var href = a.getAttribute('href');
+      scrollToSection(href.replace('#',''));
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // Hamburger
+  document.getElementById('ham').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  // Modal close
+  document.getElementById('mClose').addEventListener('click', closeModal);
+  document.getElementById('overlay').addEventListener('click', function(e){
+    if (e.target === document.getElementById('overlay')) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Deep link
   handleDeepLink();
 });
 </script>
-
 </body>
 </html>

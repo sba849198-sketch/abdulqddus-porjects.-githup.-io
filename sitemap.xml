@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- الصفحة الرئيسية -->
   <url>
@@ -8,7 +7,6 @@
     <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://sba849198-sketch.github.io/abdulquddus-aqdev.github.io/"/>
   </url>
 
   <!-- صفحة تفاصيل سوقة -->
@@ -18,13 +16,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- أضف مشاريعك هنا: -->
-  <!-- <url>
-    <loc>https://aqdev.github.io/?project=shaibai</loc>
-    <lastmod>2025-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url> -->
 
 </urlset>

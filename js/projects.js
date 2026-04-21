@@ -1,11 +1,15 @@
-// js/projects.js v3
+// js/projects.js — بيانات المشاريع
+var BASE_URL = "https://sba849198-sketch.github.io/abdulquddus-aqdev.github.io";
+
 var PROJECTS = [
   {
     id: "souga",
     title: "سوقة — Souga",
-    subtitle: "سوق إلكتروني محلي يربط البائعين بالمشترين",
+    subtitle: "سوق إلكتروني عربي احترافي — حمّله مجاناً الآن",
+    shareTitle: "🛒 تطبيق سوقة — تسوّق وبيع بسهولة من هاتفك | مجاني 100%",
+    shareDesc: "حمّل سوقة الآن واستمتع بتسوق ذكي مع ميزات الدردشة المباشرة والذكاء الاصطناعي وأكثر من 42 عملة عالمية. آمن وسريع وسهل.",
     description: "تطبيق تجارة إلكترونية متكامل بثلاثة أدوار: مشتري وبائع ومدير.",
-    longDescription: "سوقة منصة تجارة إلكترونية محلية مبنية بـ Flutter وFirebase.\n\nالميزات الرئيسية:\n• تسجيل دخول آمن مع Firebase Auth\n• رفع صور المنتجات عبر ImageKit\n• محادثات مباشرة بين المشترين والبائعين\n• نظام تقييمات ومراجعات\n• إشعارات فورية بحالة الطلبات\n• إعلانات تسويقية بالذكاء الاصطناعي Gemini\n• دعم 42 عملة عالمية\n• لوحة تحكم للمدير",
+    longDescription: "سوقة منصة تجارة إلكترونية محلية مبنية بـ Flutter وFirebase.\n\nالميزات الرئيسية:\n• تسجيل دخول آمن مع Firebase Auth\n• رفع صور المنتجات عبر ImageKit بجودة عالية\n• محادثات مباشرة بين المشترين والبائعين\n• نظام تقييمات ومراجعات\n• إشعارات فورية بحالة الطلبات\n• إعلانات تسويقية بالذكاء الاصطناعي Gemini\n• دعم 42 عملة عالمية\n• لوحة تحكم للمدير بصلاحيات كاملة",
     type: "android",
     platform: "Android",
     status: "released",
@@ -17,12 +21,12 @@ var PROJECTS = [
     accentColor: "#FFB300",
     icon: "🛒",
     appIcon: "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/1774761818932~2.png",
+    // لإضافة Screenshots: ارفع الصور في مجلد images/ على GitHub ثم أزل التعليق
     screenshots: [
-      // أضف روابط صور هنا بعد رفعها:
-       "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٤١٨-١٢٠٥٤٢.png",
-       "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٤١٨-١٢٠٤٤٦.png",
-       "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٤١٨-١٢٠٤٣٩.png",
-       "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٤١٨-١٢٠٤٠٦.png"
+      // "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/souga-screen1.jpg",
+      // "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/souga-screen2.jpg",
+      // "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/souga-screen3.jpg",
+      // "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/souga-screen4.jpg"
     ],
     downloadUrl: "https://github.com/sba849198-sketch/abdulquddus-aqdev.github.io/releases/download/v1.0.1/app-release_souga.apk",
     sourceUrl: "",
@@ -34,7 +38,9 @@ var PROJECTS = [
   {
     id: "shaibai-desktop",
     title: "ShaibAI Desktop",
-    subtitle: "وكيل ذكاء اصطناعي محلي لسطح المكتب Windows",
+    subtitle: "ذكاء اصطناعي محلي بدون إنترنت — Windows",
+    shareTitle: "🤖 ShaibAI — وكيل ذكاء اصطناعي يعمل بالكامل بدون إنترنت على Windows",
+    shareDesc: "حمّل ShaibAI وتحدث مع AI محلياً بالعربية بدون أي بيانات تُرسل للإنترنت. يعمل على أي جهاز Windows حتى بدون GPU.",
     description: "تطبيق Windows يتصل بـ LM Studio لتشغيل نماذج AI محلياً بالكامل بدون إنترنت.",
     longDescription: "ShaibAI وكيل ذكاء اصطناعي محلي مبني بـ C# و.NET WinForms.\n\nالميزات:\n• يعمل بالكامل بدون إنترنت عبر LM Studio\n• دعم نموذج Qwen2.5-7B-Instruct\n• شريط محادثات جانبي\n• تحميل CPU فقط بدون الحاجة لـ GPU\n• تدفق الاستجابات في الوقت الفعلي\n• واجهة ثنائية اللغة عربي/إنجليزي\n• معالجة نصوص عربية محسّنة",
     type: "desktop",
@@ -59,7 +65,9 @@ var PROJECTS = [
   {
     id: "shaibai-web",
     title: "ShaibAI Web",
-    subtitle: "واجهة ويب للذكاء الاصطناعي المحلي",
+    subtitle: "AI محلي في متصفحك — ASP.NET WebForms",
+    shareTitle: "🌐 ShaibAI Web — تحدث مع الذكاء الاصطناعي من أي متصفح بدون تثبيت",
+    shareDesc: "نسخة ويب من ShaibAI تعمل على أي متصفح وتتصل بـ LM Studio محلياً. لا رفع للبيانات، لا إنترنت مطلوب.",
     description: "نسخة ASP.NET WebForms من ShaibAI تعمل على أي متصفح وتتصل بـ LM Studio.",
     longDescription: "ShaibAI Web نسخة ويب من وكيل الذكاء الاصطناعي مبنية بـ ASP.NET WebForms.\n\nالميزات:\n• تعمل على أي متصفح بدون تثبيت\n• تتصل بـ LM Studio عبر REST API\n• streaming responses في الوقت الفعلي\n• واجهة عربية RTL بالكامل\n• تاريخ المحادثات\n• نسخ ومشاركة الردود بسهولة",
     type: "webapp",
@@ -83,9 +91,11 @@ var PROJECTS = [
   },
   {
     id: "azraknet",
-    title: "الأزرق نت — AzrakNet",
-    subtitle: "صفحة تسجيل دخول لشبكة الإنترنت",
-    description: "واجهة تسجيل دخول احترافية لشبكة الأزرق نت مع تصميم عصري وتجربة مستخدم سلسة.",
+    title: "الأزرق نت",
+    subtitle: "صفحة تسجيل دخول احترافية لشبكات الإنترنت",
+    shareTitle: "📡 الأزرق نت — واجهة تسجيل دخول شبكة إنترنت بتصميم عصري",
+    shareDesc: "صفحة تسجيل دخول احترافية لشبكة الأزرق نت، تصميم عربي RTL متجاوب مع جميع الأجهزة، تحميل فائق السرعة.",
+    description: "واجهة تسجيل دخول احترافية لشبكة الأزرق نت مع تصميم عصري.",
     longDescription: "صفحة تسجيل دخول احترافية لشبكة الأزرق نت.\n\nالميزات:\n• تصميم عصري وجذاب\n• واجهة عربية RTL بالكامل\n• تحقق من بيانات المستخدم\n• رسائل خطأ واضحة وسهلة الفهم\n• متوافق مع جميع الأجهزة\n• تحميل سريع جداً",
     type: "website",
     platform: "Web",
@@ -109,8 +119,8 @@ var PROJECTS = [
 ];
 
 var PROJECT_TYPES = {
-  android: { label: "Android",      icon: "📱", badge: "Android", downloadLabel: "تحميل APK",      color: "#3DDC84" },
-  webapp:  { label: "تطبيق ويب",   icon: "🌐", badge: "Web App", downloadLabel: "فتح التطبيق",   color: "#4285F4" },
-  desktop: { label: "سطح المكتب",  icon: "💻", badge: "Desktop", downloadLabel: "تحميل",          color: "#9C27B0" },
-  website: { label: "موقع ويب",    icon: "🔗", badge: "Website", downloadLabel: "زيارة الموقع",   color: "#FF6D00" }
+  android: { label: "Android",     badge: "Android",  downloadLabel: "تحميل APK مجاناً", color: "#3DDC84" },
+  webapp:  { label: "تطبيق ويب",  badge: "Web App",  downloadLabel: "تحميل الملف",      color: "#4285F4" },
+  desktop: { label: "سطح المكتب", badge: "Desktop",  downloadLabel: "تحميل البرنامج",   color: "#9C27B0" },
+  website: { label: "موقع ويب",   badge: "Website",  downloadLabel: "زيارة الموقع",     color: "#FF6D00" }
 };

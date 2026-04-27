@@ -28,7 +28,7 @@ var PROJECTS = [
        "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٤١٨-١٢٠٤٣٩.png",
        "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٤١٨-١٢٠٤٣٩.png"
     ],
-    downloadUrl: "https://github.com/sba849198-sketch/abdulquddus-aqdev.github.io/releases/download/v1.0.1/app-release.apk",
+    downloadUrl: "https://github.com/sba849198-sketch/abdulquddus-aqdev.github.io/releases/download/v1.1.0/app-release-souga.apk",
     sourceUrl: "",
     demoUrl: "",
     featured: true,

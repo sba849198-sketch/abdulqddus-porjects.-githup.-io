@@ -1,6 +1,6 @@
 // js/projects.js — بيانات المشاريع
 var BASE_URL = "https://sba849198-sketch.github.io/abdulquddus-aqdev.github.io";
-//https://github.com/sba849198-sketch/WIFI-Manager/releases/download/v1.0.0/app-release.apk
+
 var PROJECTS = [
   {
     id: "souga",
@@ -137,7 +137,7 @@ var PROJECTS = [
   "color": "#1976D2",
   "accentColor": "#42A5F5",
   "icon": "📶",
-  "appIcon": "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/wifi_manager_icon.png",
+  "appIcon": "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/app_icon_512.png",
   "screenshots": [
     "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_2026-05-08-12-34-01.png",
     "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_2026-05-08-12-34-05.png"

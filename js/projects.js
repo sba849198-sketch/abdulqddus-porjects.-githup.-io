@@ -1,6 +1,6 @@
 // js/projects.js — بيانات المشاريع
 var BASE_URL = "https://sba849198-sketch.github.io/abdulquddus-aqdev.github.io";
-
+//https://github.com/sba849198-sketch/WIFI-Manager/releases/download/v1.0.0/app-release.apk
 var PROJECTS = [
   {
     id: "souga",
@@ -118,7 +118,37 @@ var PROJECTS = [
     featured: false,
     date: "2026",
     stats: {}
-  }
+  },
+  {
+  "id": "wifi_manager",
+  "title": "مدير الواي فاي — WiFi Manager",
+  "subtitle": "تطبيق ذكي لإدارة مصاريف الإنترنت والاشتراكات — حمّله مجاناً الآن",
+  "shareTitle": "📶 تطبيق مدير الواي فاي — تتبع مصاريف الإنترنت والديون بسهولة | تطبيق مجاني",
+  "shareDesc": "WiFi Manager: إدارة مصاريف الواي فاي، تتبع الديون والبطاقات، مع تخزين محلي (Hive) ومزامنة Firebase. دعم كامل للغة العربية (RTL).",
+  "description": "تطبيق لإدارة النفقات المالية لاشتراكات الواي فاي وخدمات الإنترنت.",
+  "longDescription": "مدير الواي فاي هو تطبيق Flutter متكامل مصمم لمساعدتك على تتبع وإدارة جميع نفقات الإنترنت الخاصة بك.\n\nالميزات الرئيسية:\n• إدارة المصاريف الشهرية وتصنيفها حسب النوع\n• متابعة الديون والبطاقات\n• تخزين محلي (Hive) مع مزامنة Firebase لضمان عدم فقدان البيانات\n• دعم كامل للغة العربية (RTL)\n• تصميم سهل وجذاب\n• عرض تقارير مالية",
+  "type": "android",
+  "platform": "Android",
+  "status": "released",
+  "version": "1.0.0",
+  "size": "19 MB",
+  "category": "مالية وإنتاجية",
+  "tags": ["Flutter", "Firebase", "Dart", "Hive", "Provider", "RTL"],
+  "color": "#1976D2",
+  "accentColor": "#42A5F5",
+  "icon": "📶",
+  "appIcon": "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/wifi_manager_icon.png",
+  "screenshots": [
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_2026-05-08-12-34-01.png",
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_2026-05-08-12-34-05.png"
+  ],
+  "downloadUrl": "https://github.com/sba849198-sketch/WIFI-Manager/releases/download/v1.0.0/app-release.apk",
+  "sourceUrl": "https://github.com/sba849198-sketch/WIFI-Manager",
+  "demoUrl": "",
+  "featured": true,
+  "date": "2026-05-08",
+  "stats": { "downloads": "100+", "rating": "5.0", "reviews": "5+" }
+}
 ];
 
 var PROJECT_TYPES = {

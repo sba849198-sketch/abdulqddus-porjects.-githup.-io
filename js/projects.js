@@ -139,8 +139,15 @@ var PROJECTS = [
   "icon": "📶",
   "appIcon": "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/app_icon_512.png",
   "screenshots": [
-    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_2026-05-08-12-34-01.png",
-    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_2026-05-08-12-34-05.png"
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٥٠٨-٠٢١٦٠١.png",
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٥٠٨-٠٢٤٩٣٦.png",
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٥٠٨-٠٢٤٩٥٧.png",
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٥٠٨-٠٢٤٩٣٠.png",
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٥٠٨-٠٢٤٩٤٧.png",
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٥٠٨-٠٢٥٠١٤.png",
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٥٠٨-٠٢٥٠٢٨.png",
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٥٠٨-٠٢٥١٠٩.png",
+    "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٥٠٨-٠٢٤٩٣٦.png",
   ],
   "downloadUrl": "https://github.com/sba849198-sketch/WIFI-Manager/releases/download/v1.0.0/app-release.apk",
   "sourceUrl": "https://github.com/sba849198-sketch/WIFI-Manager",

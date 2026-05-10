@@ -5,12 +5,12 @@
 // اذهب إلى: Firebase Console → Project Settings → Your Apps → Firebase SDK snippet
 
 var FIREBASE_CONFIG = {
-  apiKey:            "YOUR_API_KEY",
-  authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId:         "YOUR_PROJECT_ID",
-  storageBucket:     "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId:             "YOUR_APP_ID"
+apiKey: "AIzaSyAeLXOPgUEDm17M42I9uRVdzlzsp2bgsz4",
+  authDomain: "aqdev-website-88e35.firebaseapp.com",
+  projectId: "aqdev-website-88e35",
+  storageBucket: "aqdev-website-88e35.firebasestorage.app",
+  messagingSenderId: "77627286992",
+  appId: "1:77627286992:web:0678aaf20ace7087dec5d5"
 };
 
 // ==========================================

@@ -1,4 +1,18 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sba849198-sketch.github.io/abdulquddus-aqdev.github.io/sitemap.xml
+# Sitemaps
+Sitemap: https://abdulquddus-aqdev.github.io/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Block unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

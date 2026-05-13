@@ -4,12 +4,12 @@ var BASE_URL = "https://sba849198-sketch.github.io/abdulquddus-aqdev.github.io";
 var PROJECTS = [
   {
     id: "souga",
-    title: "سوقة — Souga",
+    title: "سوجا — Souga",
     subtitle: "سوق إلكتروني عربي احترافي — حمّله مجاناً الآن",
-    shareTitle: "🛒 تطبيق سوقة — تسوّق وبيع بسهولة من هاتفك | مجاني 100%",
-    shareDesc: "حمّل سوقة الآن واستمتع بتسوق ذكي مع ميزات الدردشة المباشرة والذكاء الاصطناعي وأكثر من 42 عملة عالمية. آمن وسريع وسهل.",
+    shareTitle: "🛒 تطبيق سوجا — تسوّق وبيع بسهولة من هاتفك | مجاني 100%",
+    shareDesc: "حمّل سوجا الآن واستمتع بتسوق ذكي مع ميزات الدردشة المباشرة والذكاء الاصطناعي وأكثر من 42 عملة عالمية. آمن وسريع وسهل.",
     description: "تطبيق تجارة إلكترونية متكامل بثلاثة أدوار: مشتري وبائع ومدير.",
-    longDescription: "سوقة منصة تجارة إلكترونية محلية مبنية بـ Flutter وFirebase.\n\nالميزات الرئيسية:\n• تسجيل دخول آمن مع Firebase Auth\n• رفع صور المنتجات عبر ImageKit بجودة عالية\n• محادثات مباشرة بين المشترين والبائعين\n• نظام تقييمات ومراجعات\n• إشعارات فورية بحالة الطلبات\n• إعلانات تسويقية بالذكاء الاصطناعي Gemini\n• دعم 42 عملة عالمية\n• لوحة تحكم للمدير بصلاحيات كاملة",
+    longDescription: "سوجا منصة تجارة إلكترونية محلية مبنية بـ Flutter وFirebase.\n\nالميزات الرئيسية:\n• تسجيل دخول آمن مع Firebase Auth\n• رفع صور المنتجات عبر ImageKit بجودة عالية\n• محادثات مباشرة بين المشترين والبائعين\n• نظام تقييمات ومراجعات\n• إشعارات فورية بحالة الطلبات\n• إعلانات تسويقية بالذكاء الاصطناعي Gemini\n• دعم 42 عملة عالمية\n• لوحة تحكم للمدير بصلاحيات كاملة",
     type: "android",
     platform: "Android",
     status: "released",
@@ -28,7 +28,7 @@ var PROJECTS = [
        "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٤١٨-١٢٠٤٣٩.png",
        "https://raw.githubusercontent.com/sba849198-sketch/abdulquddus-aqdev.github.io/main/images/Screenshot_٢٠٢٦٠٤١٨-١٢٠٤٣٩.png"
     ],
-    downloadUrl: "https://github.com/sba849198-sketch/abdulquddus-aqdev.github.io/releases/download/v1.1.0/app-release-souga.apk",
+    downloadUrl: "https://github.com/sba849198-sketch/abdulquddus-aqdev.github.io/releases/download/v1.1.0/app-release.apk",
     sourceUrl: "",
     demoUrl: "",
     featured: true,
